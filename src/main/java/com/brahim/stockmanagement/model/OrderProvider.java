@@ -26,8 +26,8 @@ public class OrderProvider extends AbstractEntity{
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;*/
 
-    @Column(name = "identreprise")
-    private Integer idEntreprise;
+    @Column(name = "idcompany")
+    private Integer idCompany;
 
     @ManyToOne
     @JoinColumn(name = "idprovider")

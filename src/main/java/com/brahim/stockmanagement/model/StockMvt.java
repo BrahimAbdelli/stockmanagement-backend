@@ -16,11 +16,11 @@ import java.time.Instant;
 @Entity
 @Table(name="stockmvt")
 public class StockMvt extends AbstractEntity {
-    @Column(name = "datemvt")
-    private Instant dateMvt;
+    @Column(name = "mvtdate")
+    private Instant mvtDate;
 
-    @Column(name = "quantite")
-    private BigDecimal quantite;
+    @Column(name = "quantity")
+    private BigDecimal quantity;
 
     @ManyToOne
     @JoinColumn(name = "idarticle")
@@ -30,6 +30,6 @@ public class StockMvt extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private TypeStockMvt typeStockMvt;
 
-    @Column(name = "identreprise")
-    private Integer idEntreprise;
+    @Column(name = "idCompany")
+    private Integer idComapny;
 }
