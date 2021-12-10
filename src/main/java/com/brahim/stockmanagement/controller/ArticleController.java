@@ -52,6 +52,5 @@ public class ArticleController implements ArticleApi {
     @Override
     public void delete(Integer id) {
         articleService.delete(id);
-
     }
 }

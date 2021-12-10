@@ -9,4 +9,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface StockMvtRepository extends JpaRepository<StockMvt, Integer> {
+
+  @Query("select sum(m.quantity) from StockMvt m where m.article.id = :idArticle")
+  BigDecimal stockRealArticle(@Param("idArticle") Integer idArticle);
+
+  List<StockMvt> findAllByArticleId(Integer idArticle);
+
 }

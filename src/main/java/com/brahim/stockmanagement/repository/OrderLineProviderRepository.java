@@ -6,4 +6,8 @@ import com.brahim.stockmanagement.model.OrderLineProvider;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderLineProviderRepository extends JpaRepository<OrderLineProvider, Integer> {
+
+  List<OrderLineProvider> findAllByOrderProviderId(Integer idOrder);
+
+  List<OrderLineProvider> findAllByArticleId(Integer idOrder);
 }

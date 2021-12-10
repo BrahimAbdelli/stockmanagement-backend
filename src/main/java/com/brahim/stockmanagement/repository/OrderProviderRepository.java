@@ -8,4 +8,8 @@ import com.brahim.stockmanagement.model.OrderProvider;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderProviderRepository extends JpaRepository<OrderProvider, Integer> {
+
+  Optional<OrderProvider> findOrderProviderByCode(String code);
+
+  List<OrderClient> findAllByProviderId(Integer id);
 }

@@ -19,8 +19,8 @@ public class OrderClient extends AbstractEntity{
     @Column(name = "code")
     private String code;
 
-    @Column(name = "commanddate")
-    private Instant commandDate;
+    @Column(name = "orderdate")
+    private Instant orderDate;
 
     /*@Column(name = "orderstatus")
     @Enumerated(EnumType.STRING)

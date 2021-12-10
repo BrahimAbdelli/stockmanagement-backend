@@ -3,13 +3,13 @@ package com.brahim.stockmanagement.validators;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.brahim.stockmanagement.dto.OrderClientDTO;
+import com.brahim.stockmanagement.dto.OrderClientDto;
 import org.springframework.util.StringUtils;
 
 public class OrderClientValidator {
 
 
-  public static List<String> validate(OrderClientDTO dto) {
+  public static List<String> validate(OrderClientDto dto) {
     List<String> errors = new ArrayList<>();
     if (dto == null) {
       errors.add("'Please fill the order code'");
@@ -22,7 +22,7 @@ public class OrderClientValidator {
     if (!StringUtils.hasLength(dto.getCode())) {
       errors.add("'Please fill the order code'");
     }
-    if (dto.getCommandDate() == null) {
+    if (dto.getOrderDate() == null) {
       errors.add("'Please fill the order date'");
     }
 /*    if (!StringUtils.hasLength(dto.getOrderStatus().toString())) {

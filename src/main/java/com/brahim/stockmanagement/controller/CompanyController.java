@@ -35,4 +35,5 @@ public class CompanyController implements CompanyApi {
     public void delete(Integer id) {
         companyService.findAll();
     }
+
 }

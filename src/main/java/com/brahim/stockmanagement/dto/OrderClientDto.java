@@ -10,13 +10,13 @@ import lombok.Data;
 
 @Data
 @Builder
-public class OrderClientDTO {
+public class OrderClientDto {
 
   private Integer id;
 
   private String code;
 
-  private Instant commandDate;
+  private Instant orderDate;
 
   private OrderStatus orderStatus;
 
@@ -26,14 +26,14 @@ public class OrderClientDTO {
 
   private List<OrderLineClientDto> OrderLineClients;
 
-  public static OrderClientDTO fromEntity(OrderClient orderClient) {
+  public static OrderClientDto fromEntity(OrderClient orderClient) {
     if (orderClient == null) {
       return null;
     }
-    return OrderClientDTO.builder()
+    return OrderClientDto.builder()
         .id(orderClient.getId())
         .code(orderClient.getCode())
-        .commandDate(orderClient.getCommandDate())
+        .orderDate(orderClient.getOrderDate())
         //.etatCommande(orderClient.getEtatCommande())
         .client(ClientDto.fromEntity(orderClient.getClient()))
         .idCompany(orderClient.getIdCompany())
@@ -41,7 +41,7 @@ public class OrderClientDTO {
 
   }
 
-  public static OrderClient toEntity(OrderClientDTO dto) {
+  public static OrderClient toEntity(OrderClientDto dto) {
     if (dto == null) {
       return null;
     }
@@ -49,7 +49,7 @@ public class OrderClientDTO {
     orderClient.setId(dto.getId());
     orderClient.setCode(dto.getCode());
     orderClient.setClient(ClientDto.toEntity(dto.getClient()));
-    orderClient.setCommandDate(dto.getCommandDate());
+    orderClient.setOrderDate(dto.getOrderDate());
     //orderClient.setEtatCommande(dto.getEtatCommande());
     orderClient.setIdCompany(dto.getIdCompany());
     return orderClient;

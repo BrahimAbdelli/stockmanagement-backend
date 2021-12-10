@@ -15,7 +15,7 @@ public class OrderLineClientDto {
   private ArticleDto article;
 
   @JsonIgnore
-  private OrderClientDTO orderClient;
+  private OrderClientDto orderClient;
 
   private BigDecimal quantity;
 
