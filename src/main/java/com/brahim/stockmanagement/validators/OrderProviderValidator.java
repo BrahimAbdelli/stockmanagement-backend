@@ -21,7 +21,7 @@ public class OrderProviderValidator {
     if (!StringUtils.hasLength(dto.getCode())) {
       errors.add("'Please fill the order code'");
     }
-    if (dto.getCommandDate() == null) {
+    if (dto.getOrderDate() == null) {
       errors.add("'Please fill the order date'");
     }
 /*    if (!StringUtils.hasLength(dto.getOrderStatus().toString())) {

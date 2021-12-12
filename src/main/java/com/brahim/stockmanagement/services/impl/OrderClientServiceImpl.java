@@ -66,7 +66,7 @@ public class OrderClientServiceImpl implements OrderClientService {
                         articleErrors.add("Article with the ID " + ordLineClts.getArticle().getId() + " doesn't exist");
                     }
                 } else {
-                    articleErrors.add("Cannot register an Article with a NULL article");
+                    articleErrors.add("Cannot register an Order with a NULL article");
                 }
             });
         }

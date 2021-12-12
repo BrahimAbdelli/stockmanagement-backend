@@ -16,7 +16,7 @@ public class OrderProviderDto {
 
   private String code;
 
-  private Instant commandDate;
+  private Instant orderDate;
 
   private OrderStatus orderStatus;
 
@@ -33,7 +33,7 @@ public class OrderProviderDto {
     return OrderProviderDto.builder()
         .id(orderProvider.getId())
         .code(orderProvider.getCode())
-        .commandDate(orderProvider.getCommandDate())
+        .orderDate(orderProvider.getOrderDate())
         .provider(ProviderDto.fromEntity(orderProvider.getProvider()))
         //.orderStatus(orderProvider.getOrderStatus())
         .idCompany(orderProvider.getIdCompany())
@@ -47,7 +47,7 @@ public class OrderProviderDto {
     OrderProvider orderProvider = new OrderProvider();
     orderProvider.setId(dto.getId());
     orderProvider.setCode(dto.getCode());
-    orderProvider.setCommandDate(dto.getCommandDate());
+    orderProvider.setOrderDate(dto.getOrderDate());
     orderProvider.setProvider(ProviderDto.toEntity(dto.getProvider()));
     orderProvider.setIdCompany(dto.getIdCompany());
     //orderProvider.setOrderStatus(dto.getOrderStatus());

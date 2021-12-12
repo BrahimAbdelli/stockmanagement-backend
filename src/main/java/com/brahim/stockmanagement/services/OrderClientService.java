@@ -10,7 +10,7 @@ public interface OrderClientService {
 
     OrderClientDto findById(Integer id);
 
-    public OrderClientDto findByCode(String code);
+    OrderClientDto findByCode(String code);
 
     List<OrderClientDto> findAll();
 
