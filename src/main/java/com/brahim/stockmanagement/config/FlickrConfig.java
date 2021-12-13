@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
-//@Configuration
+@Configuration
 public class FlickrConfig {
     @Value("${flickr.apiKey}")
     private String apiKey;
@@ -33,7 +33,7 @@ public class FlickrConfig {
     @Value("${flickr.appSecret}")
     private String appSecret;
 
-    @Bean
+   /*@Bean
     public Flickr getFlickr() throws InterruptedException, ExecutionException, IOException, FlickrException {
         Flickr flickr = new
                 Flickr(apiKey, apiSecret, new REST());
@@ -63,8 +63,22 @@ public class FlickrConfig {
         System.out.println(auth.getTokenSecret());
 
         return flickr;
-    }
+    }*/
 
+    @Bean
+    public Flickr getFlickr() {
+        Flickr flickr = new Flickr(apiKey, apiSecret, new REST());
+
+        Auth auth = new Auth();
+        auth.setPermission(Permission.READ);
+        auth.setToken(appKey);
+        auth.setTokenSecret(appSecret);
+        RequestContext requestContext = RequestContext.getRequestContext();
+        requestContext.setAuth(auth);
+        flickr.setAuth(auth);
+
+        return flickr;
+    }
 
 //    @Bean
 //    public Flickr getFlickr2() {
