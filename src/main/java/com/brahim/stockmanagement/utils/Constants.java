@@ -2,5 +2,5 @@ package com.brahim.stockmanagement.utils;
 
 public interface Constants {
 
-    public static String APP_ROOT = "api";
+    String APP_ROOT = "stockmanagement/api/";
 }
