@@ -33,7 +33,7 @@ public interface CategoryApi {
     })
     CategoryDto findById(@PathVariable("idCategory") Integer id);
 
-    @GetMapping(value = "/{codeCategory}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/filter/{codeCategory}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Search a category by CODE", notes = "This method allows you to search a category by its CODE", response =
             CategoryDto.class)
     @ApiResponses(value = {
