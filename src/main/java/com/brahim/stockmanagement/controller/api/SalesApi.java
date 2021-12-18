@@ -9,7 +9,7 @@ import java.util.List;
 
 import static com.brahim.stockmanagement.utils.Constants.APP_ROOT;
 
-@RequestMapping("/sales")
+@RequestMapping(APP_ROOT + "/sales")
 @Api(APP_ROOT + "/sales")
 public interface SalesApi {
     @PostMapping(value = APP_ROOT + "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

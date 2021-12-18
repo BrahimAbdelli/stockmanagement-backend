@@ -1,6 +1,7 @@
 package com.brahim.stockmanagement.controller.api;
 
 import com.brahim.stockmanagement.dto.UserDto;
+import io.swagger.annotations.Api;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,8 @@ import java.util.List;
 
 import static com.brahim.stockmanagement.utils.Constants.APP_ROOT;
 
-@RequestMapping("/users")
+@RequestMapping(APP_ROOT + "/users")
+@Api(APP_ROOT + "/users")
 public interface UserApi {
     @PostMapping(value = APP_ROOT + "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     UserDto save(@RequestBody UserDto dto);

@@ -13,7 +13,7 @@ import java.util.List;
 
 import static com.brahim.stockmanagement.utils.Constants.APP_ROOT;
 
-@RequestMapping(APP_ROOT + "categories")
+@RequestMapping(APP_ROOT + "/categories")
 @Api(APP_ROOT + "/categories")
 public interface CategoryApi {
 

@@ -4,9 +4,11 @@ import com.brahim.stockmanagement.controller.api.UserApi;
 import com.brahim.stockmanagement.dto.UserDto;
 import com.brahim.stockmanagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class UserController implements UserApi {
 
     private UserService userService;
