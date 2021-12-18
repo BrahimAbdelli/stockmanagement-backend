@@ -10,6 +10,8 @@ public interface CategoryService {
 
     CategoryDto findById(Integer id);
 
+    CategoryDto findByCode(String code);
+
     List<CategoryDto> findAll();
 
     void delete(Integer id);

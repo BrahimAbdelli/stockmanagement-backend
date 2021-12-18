@@ -1,5 +1,6 @@
 package com.brahim.stockmanagement.services.impl;
 
+import com.brahim.stockmanagement.dto.ArticleDto;
 import com.brahim.stockmanagement.dto.CategoryDto;
 import com.brahim.stockmanagement.exception.EntityNotFoundException;
 import com.brahim.stockmanagement.exception.ErrorCodes;
@@ -10,6 +11,7 @@ import com.brahim.stockmanagement.validators.CategoryValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -48,6 +50,22 @@ public class CategoryServiceImpl implements CategoryService {
                         "No category with the ID = " + id + " was found",
                         ErrorCodes.CATEGORY_NOT_FOUND)
         );
+    }
+
+    @Override
+    public CategoryDto findByCode(String code) {
+        if (!StringUtils.hasLength(code)) {
+            log.error("Category Code is null");
+            return null;
+        }
+
+        return categoryRepository.findCategoryByCode(code)
+                .map(CategoryDto::fromEntity)
+                .orElseThrow(() ->
+                        new EntityNotFoundException(
+                                "No category with the Code = " + code + " was found",
+                                ErrorCodes.ARTICLE_NOT_FOUND)
+                );
     }
 
     @Override

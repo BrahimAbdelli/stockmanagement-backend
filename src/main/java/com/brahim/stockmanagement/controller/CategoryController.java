@@ -4,9 +4,11 @@ import com.brahim.stockmanagement.controller.api.CategoryApi;
 import com.brahim.stockmanagement.dto.CategoryDto;
 import com.brahim.stockmanagement.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class CategoryController implements CategoryApi {
 
     private CategoryService categoryService;
@@ -24,6 +26,11 @@ public class CategoryController implements CategoryApi {
     @Override
     public CategoryDto findById(Integer id) {
         return categoryService.findById(id);
+    }
+
+    @Override
+    public CategoryDto findByCode(String code) {
+        return categoryService.findByCode(code);
     }
 
     @Override
