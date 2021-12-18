@@ -4,9 +4,11 @@ import com.brahim.stockmanagement.controller.api.CompanyApi;
 import com.brahim.stockmanagement.dto.CompanyDto;
 import com.brahim.stockmanagement.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class CompanyController implements CompanyApi {
 
     private CompanyService companyService;
