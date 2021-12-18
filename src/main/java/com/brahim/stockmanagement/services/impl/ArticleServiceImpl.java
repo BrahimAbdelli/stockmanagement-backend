@@ -62,7 +62,7 @@ public class ArticleServiceImpl implements ArticleService {
                 .map(ArticleDto::fromEntity)
                 .orElseThrow(() ->
                         new EntityNotFoundException(
-                                "No article with the ID = " + code + " was found",
+                                "No article with the Code = " + code + " was found",
                                 ErrorCodes.ARTICLE_NOT_FOUND)
                 );
     }
