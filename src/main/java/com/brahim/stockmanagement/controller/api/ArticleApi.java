@@ -12,7 +12,7 @@ import java.util.List;
 
 import static com.brahim.stockmanagement.utils.Constants.APP_ROOT;
 
-@RequestMapping(APP_ROOT + "articles")
+@RequestMapping(APP_ROOT + "/articles")
 @Api(APP_ROOT + "/articles")
 public interface ArticleApi {
 
